@@ -6,23 +6,23 @@ body, h1, p {
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Set a background color */
 }
 
 /* Header styles */
 header {
     background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
-    text-align: center;
 }
 
 nav li {
     display: inline;
-    margin: 0 20px;
+    margin: 0 30px;
 }
 
 nav a {
@@ -32,15 +32,82 @@ nav a {
 
 /* Section styles */
 section {
-    margin: 40px;
     padding: 20px;
-}
-
-/* Portfolio item styles */
-.portfolio-item {
+    background-color: #fff;
     margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
-/* Add more CSS to style your content as needed */
+.about-image {
+    width: 100%;
+    float: center;
+}
+
+.about-content {
+    width: 100%;
+    float: left;
+}
+
+/* Style the image */
+.about-image img {
+    width: 50%;
+    height: 50%;
+}
+
+.round-img {
+    border-radius: 5%;
+}
+
+td {
+    padding: 10px
+}
+
+/* Heading styles */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Links styles */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FontAwesome icons */
+i {
+    margin-right: 5px;
+}
+
+/* Contact section styles */
+#contact {
+    text-align: center;
+}
+
+/* CSS for separating contact elements with vertical bars */
+#contact p {
+    display: inline;
+    text-align: center;
+    margin-right: 10px; /* Adjust the spacing as needed */
+    border-right: 1px solid #333; /* Add vertical bar between elements */
+    padding-right: 10px; /* Add padding to space the vertical bar */
+}
+
+/* Remove vertical bar after the last contact element */
+#contact p:last-child {
+    border-right: none;
+    padding-right: 0;
+}
