@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <title>Suraj B. Khamkar</title>
+    <script>
+        // Function to fetch and update the visitor count
+        function updateVisitorCount() {
+            // Fetch the current count from the visitor.txt file
+            fetch('visitor.txt')
+                .then(response => response.text())
+                .then(count => {
+                    // Increment the count by 1
+                    count = parseInt(count) + 1;
+                    
+                    // Display the updated count on the page
+                    document.getElementById('visitor-count').textContent = `Total Visitors: ${count}`;
+                    
+                    // Update the visitor.txt file with the new count
+                    fetch('visitor.txt', {
+                        method: 'PUT',
+                        body: count.toString(),
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching or updating visitor count:', error);
+                });
+        }
+
+        // Call the updateVisitorCount function when the page loads
+        updateVisitorCount();
+    </script>
 </head>
 <body>
     <header>
@@ -20,7 +47,6 @@
             </ul>
         </nav>
     </header>
-
     <div>
         <section id="about">
             <table border="0">
@@ -113,6 +139,11 @@
                 <p><i class="fa fa-code"></i> <a href="https://khamkarsuraj.github.io/LeetCode/">LeetCode</a></p>
             </div>
         </section>
+    
+        <!-- Add an element to display the visitor count -->
+        <div id="visitor-count" style="text-align: center;">
+            Loading visitor count...
+        </div>
     </div>
 </body>
 </html>
